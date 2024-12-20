@@ -1,0 +1,13 @@
+# Ignore build directory
+build/
+
+# Ignore user-specific CMake files
+*.user
+
+# Ignore other common temporary files
+*.o
+*.obj
+*.log
+*.tmp
+.DS_Store
+
