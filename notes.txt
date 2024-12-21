@@ -1,0 +1,16 @@
+Data types
+    image,
+    audio
+        m4a
+        mp4
+
+Feedback Loop System
+    Controller
+    Plant
+
+Signal Processing
+    FFT
+    Finite Impulse Response
+    Infinite Impulse Response
+    Correlation and Convolution
+    Z Transform
