@@ -17,6 +17,9 @@ qt_add_qml_module(appfreq-analysis
     VERSION 1.0
     QML_FILES
         Main.qml
+        SOURCES data_input.h data_input.cpp
+        RESOURCES notes.txt
+        SOURCES audio.h audio.cpp
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
