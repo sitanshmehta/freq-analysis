@@ -4,6 +4,7 @@
 #include <QVector>
 #include <data_input.h>
 #include <QObject>
+#include <QAudioBuffer>
 #include <QFile>
 
 class Audio : public QObject, public DataInput
@@ -18,7 +19,9 @@ public:
     Q_INVOKABLE DataInput::DataType get_data_type() const override;
 
     Q_INVOKABLE bool load_from_file(const QString &path);
-    QString check_file_type(const QFile &file);
+    QString check_file_type(QFile &file);
+    bool process_M_four_A(QFile &file);
+    void convert_buff_to_float(const QAudioBuffer &buffer);
 
 private:
     QVector<float> data;

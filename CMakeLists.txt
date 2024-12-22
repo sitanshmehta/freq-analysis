@@ -4,22 +4,30 @@ project(freq-analysis VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 6.5 REQUIRED COMPONENTS Quick)
+find_package(Qt6 6.5 REQUIRED COMPONENTS Core Quick Qml Multimedia)
 
 qt_standard_project_setup(REQUIRES 6.5)
 
 qt_add_executable(appfreq-analysis
     main.cpp
+    audio.cpp
+    data_input.cpp
 )
+
+target_link_libraries(appfreq-analysis PRIVATE Qt6::Core Qt6::Qml Qt6::Multimedia)
 
 qt_add_qml_module(appfreq-analysis
     URI freq-analysis
     VERSION 1.0
     QML_FILES
         Main.qml
-        SOURCES data_input.h data_input.cpp
-        RESOURCES notes.txt
-        SOURCES audio.h audio.cpp
+    SOURCES
+        data_input.h
+        data_input.cpp
+        audio.h
+        audio.cpp
+    RESOURCES
+        notes.txt
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
